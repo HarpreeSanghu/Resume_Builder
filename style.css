@@ -1,0 +1,64 @@
+#cv-form{
+    width: 900px;
+   
+}
+
+#CV-template{
+   
+    width: 900px;
+   margin-top: 20px;
+   margin-left: 300px;
+ display: none;
+  
+   
+}
+.resume{
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 400px;
+    height: 50px;
+    font-size: 40px;    
+}
+.background{
+    
+    background: #a5c5e6;
+}
+
+
+#nameT{
+   
+    margin-left: 10px;
+    
+}
+#addressT{
+    margin-left: 10px;
+
+}
+#City_State_ZIP_CodeT{
+    margin-left: 10px;
+}
+#phone_noT{
+    margin-left: 10px;
+}
+#emailT{
+    margin-left: 10px;
+}
+#linkedInT{
+    margin-left: 10px;
+}
+#objectiveT{
+    float: left;
+    width: 850px;
+}
+ul{
+    list-style-type: none;
+}
+#linkedinLink {
+    color: blue;
+    text-decoration: none;
+}
+
+#linkedinLink:hover {
+    text-decoration: underline;
+}
+
