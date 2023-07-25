@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="D:\web tech\First Page\MCA PROJECT\resume_generator\style.css">
+    
+    <title>resume_generator</title>
+   
+</head>
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume</h1><HR>
+        <div class="form-group">
+            <label for="nameField">Your Name</label>
+            <input type="text" id="nameField" placeholder="Enter here" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="AddressField">Address</label>
+            <input type="text" id="AddressField" placeholder="Enter here" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="emailField">Email</label>
+            <input type="text" id="emailField" placeholder="Enter here" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="phoneNoField">Phone No</label>
+            <input type="text" id="phoneNoField" placeholder="Enter here" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="linkedInField">LinkedIn</label>
+            <input type="text" id="linkedInField" placeholder="Enter your LinkedIn profile URL" class="form-control" oninput="updateLinkedIn()"/>
+        </div>
+        
+        <div class="form-group">
+            <label for="City_State_ZIP_Code_Field">City,State,zip-code</label>
+            <input type="text" id="City_State_ZIP_Code_Field" placeholder="Enter here" class="form-control"/>
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="ObjectiveField">Objective</label>
+            <textarea id="ObjectiveField" placeholder="Enter here" class="form-control"></textarea>
+        </div>
+        <div class="form-group mt-2" >
+                    <label for="educationField">Education</label>
+                    <textarea placeholder="Enter here" class="form-control" id="educationField"></textarea>
+     </div>
+    
+       <!--- <div class="container text-center mt-3" id="eduAddButton">
+                    <button onclick="addNewEDUField()" class="btn btn-primary btn-sm">Add</button>
+                </div>-->
+                <div class="form-group">
+                    <label for="experienceField">Work Experience</label>
+                    <textarea placeholder="Enter here" class="form-control" id="experienceField"></textarea>
+                </div>
+                <!--<div class="container text-center mt-3" id="weAddButton">
+                    <button onclick="addNewWEField()" class="btn btn-primary btn-sm">Add</button>
+                </div>-->
+                <div class="form-group">
+                    <label for="certificatesField">Certificates</label>
+                    <textarea id="certificatesField" placeholder="Enter here" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="projectsField">Projects</label>
+                    <textarea id="projectsField" placeholder="Enter here" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="kskillsField">Key Skills</label>
+                    <textarea id="kskillsField" placeholder="Enter here" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="techskillsField">Technical Skills</label>
+                    <textarea id="techskillsField" placeholder="Enter here" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="lanField">Languages</label>
+                    <textarea id="lanField" placeholder="Enter here" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="perDetailField">Personal Details</label>
+                    <textarea id="perDetailField" placeholder="Enter here" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="interestsField">INTERESTS</label>
+                    <textarea id="interestsField" placeholder="Enter here" class="form-control"></textarea>
+                </div>
+               
+    </div>
+    
+    <div class="container text-center mt-3">
+        <button id="generateButton"    onclick=" generateCV()"   class="btn-primary btn-lg">Generate CV</button>
+    </div>
+
+ <!--cv template-->
+ <div class="container1" id="CV-template">
+    <div class="resume">RESUME</div><HR>
+      <div class="named" id="N_D_O">
+           <p id="nameT">$NAME</p>
+           <p id="addressT">$Address</p>
+           <p id="City_State_ZIP_CodeT">$city,state,zipcode</p>
+           <p id="phone_noT">1234567890</p>
+           <p id="emailT">example@gmail.com</p>
+           <p id="linkedInT"><a id="linkedinLink" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+         
+      </div>
+  
+      <div class="card" mt-4>
+              <div class="card-header background">  
+                  Objective   
+              </div>
+              <div class="card-body">
+                  <p id="objectiveT" >To work on a challenging job proﬁle which provide an opportunity to enhance my technical skills and knowlege,
+                      and put my eﬀorts into the growth of the organization.</p>
+              </div>
+          </div>
+  
+          <!--<div class="card" mt-4>
+              <div class="card-header background">  
+                  Education  
+              </div>
+              <div class="card-body">
+                  <ul id="eduT">
+                     <li>1</li>
+                     <li>2</li>
+                     <li>3</li>
+                     <li>4</li>
+                  </ul>
+              </div>
+          </div>-->
+          <div class="card" mt-4>
+            <div class="card-header background">  
+                Education  
+            </div>
+            <div class="card-body">
+                <ul id="eduT">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+            </div>
+        </div>
+  
+          <div class="card" mt-4>
+              <div class="card-header background">  
+                  Work Experience   
+              </div>
+              <div class="card-body">
+                  <ul id="weT">
+                     <li>1</li>
+                     <li>2</li>
+                     <li>3</li>
+                     <li>4</li>
+                  </ul>
+              </div>
+          </div>
+  
+          <div class="card" mt-4>
+              <div class="card-header background">  
+                  Key Skills
+              </div>
+              <div class="card-body">
+                  <ul id="ksT">
+                     <li>1</li>
+                     <li>2</li>
+                     <li>3</li>
+                     <li>4</li>
+                  </ul>
+              </div>
+          </div>
+  
+          <div class="card" mt-4>
+              <div class="card-header background">  
+                  Certifications
+              </div>
+              <div class="card-body">
+                  <ul id="cerT">
+                     <li>1</li>
+                     <li>2</li>
+                     <li>3</li>
+                     <li>4</li>
+                  </ul>
+              </div>
+          </div>
+  
+          <div class="card" mt-4>
+              <div class="card-header background">  
+                  Projects
+              </div>
+              <div class="card-body">
+                  <ul id="proT">
+                     <li>1</li>
+                     <li>2</li>
+                     <li>3</li>
+                     <li>4</li>
+                  </ul>
+              </div>
+          </div>
+  
+          <div class="card" mt-4>
+              <div class="card-header background">  
+                 Technical Skills
+              </div>
+              <div class="card-body">
+                  <ul id="tecsT">
+                     <li>1</li>
+                     <li>2</li>
+                     <li>3</li>
+                     <li>4</li>
+                  </ul>
+              </div>
+          </div>
+  
+          <div class="card" mt-4>
+              <div class="card-header background">  
+                 Languages
+              </div>
+              <div class="card-body">
+                  <ul id="lanT">
+                     <li>1</li>
+                     <li>2</li>
+                     <li>3</li>
+                     <li>4</li>
+                  </ul>
+              </div>
+          </div>
+  
+          <div class="card" mt-4>
+              <div class="card-header background">  
+                 Personal Details
+              </div>
+              <div class="card-body">
+                  <ul id="pdT">
+                     <li>1</li>
+                     <li>2</li>
+                     <li>3</li>
+                     <li>4</li>
+                  </ul>
+              </div>
+          </div>
+          <div class="card" mt-4>
+            <div class="card-header background">  
+               INTERESTS
+            </div>
+            <div class="card-body">
+                <ul id="intT">
+                   <li>1</li>
+                   <li>2</li>
+                   <li>3</li>
+                   <li>4</li>
+                </ul>
+            </div>
+        </div>
+          <div class="container mt-3 text-center">
+              <button onclick="printCV()" class="btn background">Print CV</button>
+          </div>
+  </div>
+  
+
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="D:\web tech\First Page\MCA PROJECT\resume_generator\script.js"></script> 
+</body>
+</html>
+    
+        
+               
+            
+            
+            
+              
+
+            
+              
+          
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="D:\web tech\First Page\MCA PROJECT\resume_generator\script.js"></script>
+</body>
+</html>
